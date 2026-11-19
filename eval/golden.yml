@@ -1,0 +1,38 @@
+# Conjunto de teste ("golden set") do manual do carro.
+# Preencha com perguntas cujas respostas VOCÊ conferiu no PDF.
+#
+# expected_pages: páginas do PDF (índice do leitor de PDF, começando em 1,
+#                 NÃO o número impresso no rodapé do manual) onde a resposta está.
+# must_include:   trechos que a resposta correta precisa conter (sem acento/maiúscula não importa).
+# should_refuse:  true = o manual não cobre; o certo é dizer "Não encontrei".
+
+# --- Fatos pontuais (números, tabelas) ---
+- question: "Qual a pressão recomendada dos pneus com carga normal?"
+  expected_pages: [123]        # TROCAR
+  must_include: ["32"]         # TROCAR
+
+- question: "Qual o óleo de motor recomendado?"
+  expected_pages: [140]        # TROCAR
+  must_include: ["5W-30"]      # TROCAR
+
+# --- Paráfrase (sem usar as palavras do manual) ---
+- question: "Quanto de ar devo colocar nas rodas?"
+  expected_pages: [123]        # TROCAR
+  must_include: ["32"]         # TROCAR
+
+# --- Termo exato (testa busca textual/híbrida) ---
+- question: "Para que serve o fusível F23?"
+  expected_pages: [200]        # TROCAR
+  must_include: ["limpador"]   # TROCAR
+
+# --- Procedimento ---
+- question: "Como troco o pneu furado?"
+  expected_pages: [160, 161]   # TROCAR
+  must_include: ["macaco"]
+
+# --- Fora do escopo: o certo é recusar ---
+- question: "Qual a capital da França?"
+  should_refuse: true
+
+- question: "Quanto custa a revisão de 10 mil km?"
+  should_refuse: true

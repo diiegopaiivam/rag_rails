@@ -1,0 +1,146 @@
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started POST "/api/v1/documents" for 192.168.65.1 at 2026-11-19 14:29:23 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/api/v1/documents.rb:17:in `block (2 levels) in <class:Documents>'
+  [1m[36mDocument Create (3.4ms)[0m  [1m[32mINSERT INTO "documents" ("title", "status", "pages_count", "error_message", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "handbook-cronos-2024_2024.pdf"], ["status", "pending"], ["pages_count", nil], ["error_message", nil], ["created_at", "2026-11-19 14:29:24.098748"], ["updated_at", "2026-11-19 14:29:24.098748"]]
+  ↳ app/api/v1/documents.rb:17:in `block (2 levels) in <class:Documents>'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/api/v1/documents.rb:17:in `block (2 levels) in <class:Documents>'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/api/v1/documents.rb:18:in `block (2 levels) in <class:Documents>'
+  [1m[36mActiveStorage::Blob Load (0.9ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 4], ["record_type", "Document"], ["name", "file"], ["LIMIT", 1]]
+  ↳ app/api/v1/documents.rb:18:in `block (2 levels) in <class:Documents>'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 4], ["record_type", "Document"], ["name", "file"], ["LIMIT", 1]]
+  ↳ app/api/v1/documents.rb:18:in `block (2 levels) in <class:Documents>'
+  [1m[36mActiveStorage::Blob Create (0.3ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["key", "xtk36xlyi04m1qheuokhvjlsqtjb"], ["filename", "handbook-cronos-2024_2024.pdf"], ["content_type", "application/pdf"], ["metadata", "{\"identified\":true}"], ["service_name", "local"], ["byte_size", 17130893], ["checksum", "Uogxo+Pdx5SvVsa8JvArZA=="], ["created_at", "2026-11-19 14:29:24.230287"]]
+  ↳ app/api/v1/documents.rb:18:in `block (2 levels) in <class:Documents>'
+  [1m[36mActiveStorage::Attachment Create (0.4ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "file"], ["record_type", "Document"], ["record_id", 4], ["blob_id", 2], ["created_at", "2026-11-19 14:29:24.235123"]]
+  ↳ app/api/v1/documents.rb:18:in `block (2 levels) in <class:Documents>'
+  [1m[36mDocument Update (0.2ms)[0m  [1m[33mUPDATE "documents" SET "updated_at" = $1 WHERE "documents"."id" = $2[0m  [["updated_at", "2026-11-19 14:29:24.238538"], ["id", 4]]
+  ↳ app/api/v1/documents.rb:18:in `block (2 levels) in <class:Documents>'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/api/v1/documents.rb:18:in `block (2 levels) in <class:Documents>'
+[36m  Disk Storage (40.5ms) [0m[32mUploaded file to key: xtk36xlyi04m1qheuokhvjlsqtjb (checksum: Uogxo+Pdx5SvVsa8JvArZA==)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/api/v1/documents.rb:18:in `block (2 levels) in <class:Documents>'
+  [1m[36mActiveStorage::Blob Update (1.0ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 2]]
+  ↳ app/api/v1/documents.rb:18:in `block (2 levels) in <class:Documents>'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = $1[0m  [["blob_id", 2]]
+  ↳ app/api/v1/documents.rb:18:in `block (2 levels) in <class:Documents>'
+  [1m[36mDocument Load (0.1ms)[0m  [1m[34mSELECT "documents".* FROM "documents" WHERE "documents"."id" = $1[0m  [["id", 4]]
+  ↳ app/api/v1/documents.rb:18:in `block (2 levels) in <class:Documents>'
+  [1m[36mDocument Update (0.1ms)[0m  [1m[33mUPDATE "documents" SET "updated_at" = $1 WHERE "documents"."id" = $2[0m  [["updated_at", "2026-11-19 14:29:24.305328"], ["id", 4]]
+  ↳ app/api/v1/documents.rb:18:in `block (2 levels) in <class:Documents>'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/api/v1/documents.rb:18:in `block (2 levels) in <class:Documents>'
+  [1m[36mDocument Load (0.2ms)[0m  [1m[34mSELECT "documents".* FROM "documents" WHERE "documents"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/jobs/ingest_document_job.rb:6:in `perform'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/jobs/ingest_document_job.rb:7:in `perform'
+  [1m[36mDocument Update (2.9ms)[0m  [1m[33mUPDATE "documents" SET "status" = $1, "updated_at" = $2 WHERE "documents"."id" = $3[0m  [["status", "processing"], ["updated_at", "2026-11-19 14:29:24.483315"], ["id", 4]]
+  ↳ app/jobs/ingest_document_job.rb:7:in `perform'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/jobs/ingest_document_job.rb:7:in `perform'
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 4], ["record_type", "Document"], ["name", "file"], ["LIMIT", 1]]
+  ↳ app/jobs/ingest_document_job.rb:9:in `perform'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/jobs/ingest_document_job.rb:9:in `perform'
+[36m  Disk Storage (32.9ms) [0m[34mDownloaded file from key: xtk36xlyi04m1qheuokhvjlsqtjb[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/jobs/ingest_document_job.rb:27:in `rescue in perform'
+  [1m[36mDocument Update (2.8ms)[0m  [1m[33mUPDATE "documents" SET "status" = $1, "error_message" = $2, "updated_at" = $3 WHERE "documents"."id" = $4[0m  [["status", "failed"], ["error_message", "Gemini embed falhou (429): {\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://aistudio.google.com/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/embed_content_free_tier_requests, limit: 100, model: gemini-embedding-2, description: Embed content requests per minute li..."], ["updated_at", "2026-11-19 14:29:33.144700"], ["id", 4]]
+  ↳ app/jobs/ingest_document_job.rb:27:in `rescue in perform'
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/jobs/ingest_document_job.rb:27:in `rescue in perform'
+Started GET "/api/v1/documents/4" for 192.168.65.1 at 2026-11-19 14:29:33 +0000
+  [1m[36mDocument Load (0.3ms)[0m  [1m[34mSELECT "documents".* FROM "documents" WHERE "documents"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/api/v1/documents.rb:26:in `block (3 levels) in <class:Documents>'
+  [1m[36mChunk Count (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "chunks" WHERE "chunks"."document_id" = $1[0m  [["document_id", 4]]
+  ↳ app/api/v1/documents.rb:28:in `block (3 levels) in <class:Documents>'
+Started GET "/api/v1/documents/3" for 192.168.65.1 at 2026-11-19 14:29:51 +0000
+  [1m[36mDocument Load (0.3ms)[0m  [1m[34mSELECT "documents".* FROM "documents" WHERE "documents"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/api/v1/documents.rb:26:in `block (3 levels) in <class:Documents>'
+  [1m[36mChunk Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "chunks" WHERE "chunks"."document_id" = $1[0m  [["document_id", 3]]
+  ↳ app/api/v1/documents.rb:28:in `block (3 levels) in <class:Documents>'
+Started GET "/api/v1/documents/4" for 192.168.65.1 at 2026-11-19 14:29:55 +0000
+  [1m[36mDocument Load (0.2ms)[0m  [1m[34mSELECT "documents".* FROM "documents" WHERE "documents"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/api/v1/documents.rb:26:in `block (3 levels) in <class:Documents>'
+  [1m[36mChunk Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "chunks" WHERE "chunks"."document_id" = $1[0m  [["document_id", 4]]
+  ↳ app/api/v1/documents.rb:28:in `block (3 levels) in <class:Documents>'
+  [1m[36mDocument Load (0.8ms)[0m  [1m[34mSELECT "documents".* FROM "documents" WHERE "documents"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/jobs/ingest_document_job.rb:6:in `perform'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/jobs/ingest_document_job.rb:7:in `perform'
+  [1m[36mDocument Update (1.8ms)[0m  [1m[33mUPDATE "documents" SET "status" = $1, "error_message" = $2, "updated_at" = $3 WHERE "documents"."id" = $4[0m  [["status", "processing"], ["error_message", nil], ["updated_at", "2026-11-19 14:29:55.529979"], ["id", 4]]
+  ↳ app/jobs/ingest_document_job.rb:7:in `perform'
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/jobs/ingest_document_job.rb:7:in `perform'
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 4], ["record_type", "Document"], ["name", "file"], ["LIMIT", 1]]
+  ↳ app/jobs/ingest_document_job.rb:9:in `perform'
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/jobs/ingest_document_job.rb:9:in `perform'
+[36m  Disk Storage (14.5ms) [0m[34mDownloaded file from key: xtk36xlyi04m1qheuokhvjlsqtjb[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/jobs/ingest_document_job.rb:27:in `rescue in perform'
+  [1m[36mDocument Update (2.2ms)[0m  [1m[33mUPDATE "documents" SET "status" = $1, "error_message" = $2, "updated_at" = $3 WHERE "documents"."id" = $4[0m  [["status", "failed"], ["error_message", "Gemini embed falhou (429): {\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://aistudio.google.com/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/embed_content_free_tier_requests, limit: 100, model: gemini-embedding-2, description: Embed content requests per minute li..."], ["updated_at", "2026-11-19 14:29:59.815666"], ["id", 4]]
+  ↳ app/jobs/ingest_document_job.rb:27:in `rescue in perform'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/jobs/ingest_document_job.rb:27:in `rescue in perform'
+  [1m[36mDocument Load (1.0ms)[0m  [1m[34mSELECT "documents".* FROM "documents" WHERE "documents"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/jobs/ingest_document_job.rb:6:in `perform'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/jobs/ingest_document_job.rb:7:in `perform'
+  [1m[36mDocument Update (1.8ms)[0m  [1m[33mUPDATE "documents" SET "status" = $1, "error_message" = $2, "updated_at" = $3 WHERE "documents"."id" = $4[0m  [["status", "processing"], ["error_message", nil], ["updated_at", "2026-11-19 14:30:31.332832"], ["id", 4]]
+  ↳ app/jobs/ingest_document_job.rb:7:in `perform'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/jobs/ingest_document_job.rb:7:in `perform'
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 4], ["record_type", "Document"], ["name", "file"], ["LIMIT", 1]]
+  ↳ app/jobs/ingest_document_job.rb:9:in `perform'
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/jobs/ingest_document_job.rb:9:in `perform'
+[36m  Disk Storage (45.8ms) [0m[34mDownloaded file from key: xtk36xlyi04m1qheuokhvjlsqtjb[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/jobs/ingest_document_job.rb:27:in `rescue in perform'
+  [1m[36mDocument Update (4.1ms)[0m  [1m[33mUPDATE "documents" SET "status" = $1, "error_message" = $2, "updated_at" = $3 WHERE "documents"."id" = $4[0m  [["status", "failed"], ["error_message", "Gemini embed falhou (429): {\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://aistudio.google.com/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/embed_content_free_tier_requests, limit: 100, model: gemini-embedding-2, description: Embed content requests per minute li..."], ["updated_at", "2026-11-19 14:30:39.837506"], ["id", 4]]
+  ↳ app/jobs/ingest_document_job.rb:27:in `rescue in perform'
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/jobs/ingest_document_job.rb:27:in `rescue in perform'
+  [1m[36mDocument Load (0.3ms)[0m  [1m[34mSELECT "documents".* FROM "documents" ORDER BY "documents"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mChunk Count (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "chunks" WHERE "chunks"."document_id" = $1[0m  [["document_id", 4]]
+  [1m[36mDocument Load (0.2ms)[0m  [1m[34mSELECT "documents".* FROM "documents" WHERE "documents"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/jobs/ingest_document_job.rb:6:in `perform'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/jobs/ingest_document_job.rb:7:in `perform'
+  [1m[36mDocument Update (3.0ms)[0m  [1m[33mUPDATE "documents" SET "status" = $1, "error_message" = $2, "updated_at" = $3 WHERE "documents"."id" = $4[0m  [["status", "processing"], ["error_message", nil], ["updated_at", "2026-11-19 14:35:43.126373"], ["id", 4]]
+  ↳ app/jobs/ingest_document_job.rb:7:in `perform'
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/jobs/ingest_document_job.rb:7:in `perform'
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 4], ["record_type", "Document"], ["name", "file"], ["LIMIT", 1]]
+  ↳ app/jobs/ingest_document_job.rb:9:in `perform'
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/jobs/ingest_document_job.rb:9:in `perform'
+[36m  Disk Storage (21.3ms) [0m[34mDownloaded file from key: xtk36xlyi04m1qheuokhvjlsqtjb[0m
+[Embedder] Aguardando 58s para respeitar limite de cota (RPM=100, TPM=30000)
+Started GET "/api/v1/documents/3" for 172.217.118.4 at 2026-11-19 14:36:02 +0000
+  [1m[36mDocument Load (0.2ms)[0m  [1m[34mSELECT "documents".* FROM "documents" WHERE "documents"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/api/v1/documents.rb:26:in `block (3 levels) in <class:Documents>'
+  [1m[36mChunk Count (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "chunks" WHERE "chunks"."document_id" = $1[0m  [["document_id", 3]]
+  ↳ app/api/v1/documents.rb:28:in `block (3 levels) in <class:Documents>'
+Started GET "/api/v1/documents/4" for 172.217.118.4 at 2026-11-19 14:36:23 +0000
+  [1m[36mDocument Load (0.1ms)[0m  [1m[34mSELECT "documents".* FROM "documents" WHERE "documents"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/api/v1/documents.rb:26:in `block (3 levels) in <class:Documents>'
+  [1m[36mChunk Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "chunks" WHERE "chunks"."document_id" = $1[0m  [["document_id", 4]]
+  ↳ app/api/v1/documents.rb:28:in `block (3 levels) in <class:Documents>'
+[Embedder] Aguardando 58s para respeitar limite de cota (RPM=100, TPM=30000)
+[Embedder] Aguardando 2s para respeitar limite de cota (RPM=100, TPM=30000)
+[Embedder] Aguardando 59s para respeitar limite de cota (RPM=100, TPM=30000)
+[Embedder] Aguardando 59s para respeitar limite de cota (RPM=100, TPM=30000)
+Started GET "/api/v1/documents/4" for 172.217.118.4 at 2026-11-19 14:39:53 +0000
+  [1m[36mDocument Load (4.7ms)[0m  [1m[34mSELECT "documents".* FROM "documents" WHERE "documents"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/api/v1/documents.rb:26:in `block (3 levels) in <class:Documents>'
+  [1m[36mChunk Count (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "chunks" WHERE "chunks"."document_id" = $1[0m  [["document_id", 4]]
+  ↳ app/api/v1/documents.rb:28:in `block (3 levels) in <class:Documents>'
+[Embedder] Aguardando 58s para respeitar limite de cota (RPM=100, TPM=30000)
+[Embedder] Aguardando 1s para respeitar limite de cota (RPM=100, TPM=30000)
