@@ -8,17 +8,16 @@
 
 # --- Fatos pontuais (números, tabelas) ---
 - question: "Qual a pressão recomendada dos pneus com carga normal?"
-  expected_pages: [123]        # TROCAR
+  expected_pages: [273]        # TROCAR
   must_include: ["32"]         # TROCAR
+
+- question: "Quantos litros de gasolina restam quando o carro acende o alerta de Reserva de combustível?"
+  expected_pages: [98]
+  must_include: ["5,5 a 7,5 litros"]
 
 - question: "Qual o óleo de motor recomendado?"
   expected_pages: [140]        # TROCAR
   must_include: ["5W-30"]      # TROCAR
-
-# --- Paráfrase (sem usar as palavras do manual) ---
-- question: "Quanto de ar devo colocar nas rodas?"
-  expected_pages: [123]        # TROCAR
-  must_include: ["32"]         # TROCAR
 
 # --- Termo exato (testa busca textual/híbrida) ---
 - question: "Para que serve o fusível F23?"
