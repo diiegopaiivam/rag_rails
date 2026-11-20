@@ -2,8 +2,6 @@ require "pdf/reader"
 require "open3"
 require "tempfile"
 
-# Retorna [{ page: 1, text: "..." }, ...]
-# Se o PDF não tem texto (escaneado), tenta OCR com ocrmypdf.
 class PdfTextExtractor
   MIN_CHARS_PER_PAGE = 30
 

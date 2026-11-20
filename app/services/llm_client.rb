@@ -7,8 +7,7 @@ class LlmClient
   MAX_TOKENS  = ENV.fetch("GEMINI_MAX_OUTPUT_TOKENS", "4096").to_i
   MAX_RETRIES = 3
 
-  # max_tokens maior: em modelos com "thinking", os tokens de raciocínio
-  # contam no limite e podem cortar a resposta.
+
   def self.call(system:, user:, max_tokens: MAX_TOKENS)
     uri = URI("#{BASE}/models/#{MODEL}:generateContent")
     body = {
