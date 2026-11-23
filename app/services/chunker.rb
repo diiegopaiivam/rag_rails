@@ -1,5 +1,3 @@
-# Divide o texto de cada página em janelas com sobreposição,
-# tentando quebrar em fim de parágrafo/frase.
 class Chunker
   SIZE    = 3000 # ~750 tokens
   OVERLAP = 400

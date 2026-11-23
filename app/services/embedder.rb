@@ -1,8 +1,6 @@
 require "net/http"
 require "json"
 
-# Embeddings via Gemini. Substitui app/services/embedder.rb (mesma interface).
-# Usa outputDimensionality = 1536, então a migration original NÃO precisa mudar.
 class Embedder
   BASE        = "https://generativelanguage.googleapis.com/v1beta"
   MODEL       = ENV.fetch("GEMINI_EMBED_MODEL", "gemini-embedding-001")
